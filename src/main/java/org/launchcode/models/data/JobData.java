@@ -82,6 +82,7 @@ public class JobData {
 
     public void add(Job job) {
         jobs.add(job);
+
     }
 
 

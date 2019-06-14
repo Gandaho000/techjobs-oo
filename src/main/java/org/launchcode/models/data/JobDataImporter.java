@@ -7,10 +7,7 @@ import org.launchcode.models.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,6 +36,8 @@ public class JobDataImporter {
             Resource resource = new ClassPathResource(DATA_FILE);
             InputStream is = resource.getInputStream();
             Reader reader = new InputStreamReader(is);
+           // OutputStream out = resource.
+           // Writer writer = new OutputStreamWriter()
             CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
             List<CSVRecord> records = parser.getRecords();
             Integer numberOfColumns = records.get(0).size();
